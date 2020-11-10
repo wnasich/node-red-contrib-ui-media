@@ -47,7 +47,9 @@ module.exports = function (RED) {
             pathUpload = path.resolve(userDir, "lib", "ui-media", "upload");
         }
 
-        httpRoot = RED.settings.get('httpAdminRoot') || RED.settings.get('httpRoot') || '/';
+        // httpRoot = RED.settings.get('httpAdminRoot') || RED.settings.get('httpRoot') || '/';
+        // wnasich : we need it to be a relative path
+        httpRoot = '../';
 
         mkdirp(pathDir).catch((err) => {
             if (err) {
